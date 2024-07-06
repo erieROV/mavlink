@@ -6561,7 +6561,7 @@
     <message id="12904" name="OPEN_DRONE_ID_SYSTEM">
       <wip/>
       <!-- This message is work-in-progress and it can therefore change, and should NOT be used in stable production environments -->
-      <description>Data for filling the OpenDroneID System message. The System Message contains general system information including the operator location/altitude and possible aircraft group and/or category/class information.</description>
+      <description>Data for filling the OpenDroneID System message. The System Message contains general system information including the operator locatin/altitude and possible aircraft group and/or category/class information.</description>
       <field type="uint8_t" name="target_system">System ID (0 for broadcast).</field>
       <field type="uint8_t" name="target_component">Component ID (0 for broadcast).</field>
       <field type="uint8_t[20]" name="id_or_mac">Only used for drone ID data received from other UAs. See detailed description at https://mavlink.io/en/services/opendroneid.html. </field>
@@ -6619,6 +6619,33 @@
       <field type="uint8_t" name="id" instance="true">Hygrometer ID</field>
       <field type="int16_t" name="temperature" units="cdegC">Temperature</field>
       <field type="uint16_t" name="humidity" units="c%">Humidity</field>
+    </message>
+    <message id="4001" name="CHARGE_CONTROLLER_STATUS">
+      <description>Status information read from a Renogy solar charge controller</description>
+      <field type="uint8_t" name="soc">State of Charge</field>
+      <field type="float" name="battery_voltage">Battery Voltage</field>
+      <field type="float" name="battery_charging_amps">Battery Charging Current</field>
+      <field type="uint8_t" name="battery_temperature">Battery Temperature</field>
+      <field type="uint8_t" name="controller_temperature">Controller Temperature</field>
+      <field type="float" name="load_voltage">Load Voltage</field>
+      <field type="float" name="load_amps">Load Current</field>
+      <field type="uint8_t" name="load_watts">Load Power</field>
+      <field type="float" name="solar_panel_voltage">Solar Panel Voltage</field>
+      <field type="float" name="solar_panel_amps">Solar Panel Current</field>
+      <field type="uint8_t" name="solar_panel_watts">Solar Panel Power</field>
+      <field type="float" name="min_battery_voltage_today">Min Battery Voltage Today</field>
+      <field type="float" name="max_battery_voltage_today">Max Battery Voltage Today</field>
+      <field type="float" name="max_charging_amps_today">Max Charging Current Today</field>
+      <field type="float" name="max_discharging_amps_today">Max Discharging Current Today</field>
+      <field type="uint8_t" name="max_charge_watts_today">Max Charging Power Today</field>
+      <field type="uint8_t" name="max_discharge_watts_today">Max Discharge Power Today</field>
+      <field type="uint8_t" name="charge_amphours_today">Total Charge Amphours Today</field>
+      <field type="uint8_t" name="discharge_amphours_today">Total Discharge Amphours Today</field>
+      <field type="uint8_t" name="charge_watthours_today">Total Charge Power Today</field>
+      <field type="uint8_t" name="discharge_watthours_today">Total Discharge Power Today</field>
+      <field type="uint8_t" name="controller_uptime_days">Controller Uptime (Days)</field>
+      <field type="uint8_t" name="total_battery_overcharges">Total Battery Overcharges</field>
+      <field type="uint8_t" name="total_battery_fullcharges">Total Battery Full Charges</field>
     </message>
   </messages>
 </mavlink>
